@@ -1,0 +1,24 @@
+name: Publish Package to npmjs
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Node.JS version from package.json
+        id: get-versions
+        run: echo "node=$(jq -r .engines.node ./package.json)" >> $GITHUB_OUTPUT
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.get-versions.outputs.node }}
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
