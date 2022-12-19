@@ -12,6 +12,7 @@
 
 - [x] Create invoice
 - [x] Reverse invoice
+- [ ] Query invoices
 - [ ] Error handling
   - [x] Szamlazz.hu API errors
   - [ ] Network errors
