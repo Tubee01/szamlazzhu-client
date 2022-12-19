@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.11](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.10...v0.1.11) (2022-12-19)
+
+
+### Bug Fixes
+
+* szlahu error message, enum name ([5b48190](https://github.com/Tubee01/szamlazzhu-client/commit/5b4819052cd2d8fe54258d090aa59027f92bd5ef))
+
 ## [0.1.10](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.9...v0.1.10) (2022-12-19)
 
 
