@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.5...v0.1.6) (2022-12-19)
+
+
+### Features
+
+* rearrange project structure ([3bd38ac](https://github.com/Tubee01/szamlazzhu-client/commit/3bd38ac9d2ede869769083d571214a07dd0485f9))
+
 ## [0.1.5](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.4...v0.1.5) (2022-12-19)
 
 
