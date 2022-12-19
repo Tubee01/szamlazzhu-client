@@ -6,8 +6,7 @@
   "license": "MIT",
   "main": "build/index.js",
   "files": [
-    "build/lib/**/*",
-    "build/index.js"
+    "build/**/*"
   ],
   "keywords": [
     "szamlazz",
