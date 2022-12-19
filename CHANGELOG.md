@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.7...v0.1.8) (2022-12-19)
+
+
+### Bug Fixes
+
+* package structure -- REVERT -- ([a6f2016](https://github.com/Tubee01/szamlazzhu-client/commit/a6f201678728eeb8b3dce833d2986d42a121f911))
+
 ## [0.1.7](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.6...v0.1.7) (2022-12-19)
 
 
