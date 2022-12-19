@@ -1,10 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - master
-      - development
+on: [push]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
@@ -40,6 +36,7 @@ jobs:
         run: npm run lint
 
       - name: Upload coverage to Codecov
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/development'
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -49,6 +46,7 @@ jobs:
           fail_ci_if_error: true
   release:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/development'
     needs: build
     steps:
       - uses: actions/checkout@v3
