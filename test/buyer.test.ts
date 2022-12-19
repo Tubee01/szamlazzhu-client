@@ -1,6 +1,5 @@
 import { Builder } from 'xml2js';
-import { BuyerEnum } from '../src/enums';
-import { Buyer } from '../src/modules';
+import { Buyer, BuyerEnum } from '../src';
 
 describe('Buyer', () => {
   const defaultBuyer = {

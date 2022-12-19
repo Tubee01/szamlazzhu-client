@@ -1,6 +1,5 @@
 import { Builder } from "xml2js";
-import { SellerEnum } from "../src/enums";
-import { Seller } from "../src/modules";
+import { SellerEnum, Seller } from "../src";
 
 describe('Seller', () => {
   const builder = new Builder({ rootName: 'elado', headless: true });

@@ -1,7 +1,5 @@
 import { Builder } from 'xml2js';
-import { Currencies, Languages, PaymentMethods } from '../src/constants';
-import { HeaderEnum } from '../src/enums';
-import { Header } from '../src/modules/header';
+import { Currencies, Languages, PaymentMethods, Header, HeaderEnum } from '../src';
 
 describe('Header', () => {
   const builder = new Builder({ rootName: 'fejlec', headless: true });

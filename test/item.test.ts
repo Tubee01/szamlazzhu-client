@@ -1,6 +1,5 @@
 import { Builder } from "xml2js";
-import { ItemEnum } from "../src/enums";
-import { Item } from "../src/modules";
+import { Item, ItemEnum } from "../src";
 
 describe('Item', () => {
   const builder = new Builder({ rootName: 'tetel', headless: true });

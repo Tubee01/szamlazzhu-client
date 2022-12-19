@@ -4,9 +4,15 @@
   "description": "Szamlazz.hu API integration module",
   "author": "Bence Tamási",
   "license": "MIT",
+  "main": "build/index.js",
   "files": [
-    "build"
+    "build/**/*"
   ],
+  "keywords": [
+    "szamlazz",
+    "szamlazz.hu"
+  ],
+  "homepage": "https://github.com/Tubee01/szamlazzhu-client",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tubee01/szamlazzhu-client"

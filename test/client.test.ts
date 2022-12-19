@@ -1,4 +1,4 @@
-import { SzamlazzAgentClient } from '../src/client';
+import SzamlazzAgentClient from "../src";
 
 describe('SzamlazzAgentClient', () => {
   const { token } = process.env as NodeJS.ProcessEnv;
