@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/Tubee01/szamlazzhu-client"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
