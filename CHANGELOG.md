@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.3...v0.1.4) (2022-12-19)
+
+
+### Bug Fixes
+
+* publish ([810d954](https://github.com/Tubee01/szamlazzhu-client/commit/810d9543090fc626ca4a4cc061afc238d8c297bc))
+
 ## [0.1.3](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.2...v0.1.3) (2022-12-19)
 
 
