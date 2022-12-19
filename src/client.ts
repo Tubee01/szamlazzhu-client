@@ -1,5 +1,5 @@
 import { CookieJar } from 'tough-cookie';
-import { SettingsEnum as SettingEnum } from './enums';
+import { SettingsEnum } from './enums';
 import { IHeader, IInvoice, ISeller, ISettings } from './interfaces';
 import { Invoice } from './modules';
 import { Builder, parseStringPromise } from 'xml2js';
@@ -109,7 +109,7 @@ export class SzamlazzAgentClient {
     const hErrorCode = headers.get('szlahu_error_code');
 
     if (hError) {
-      throw new Error(`[code: ${hErrorCode}]: ${hError}`);
+      throw new Error(`[code: ${hErrorCode}]: ${decodeURIComponent(hError).replace(/\+/g, ' ')}`);
     }
 
     const result: any = {
@@ -142,12 +142,12 @@ export class SzamlazzAgentClient {
 
   private mapSettings = (options: ISettings) =>
     omitEmpty({
-      [SettingEnum.user]: options.user,
-      [SettingEnum.password]: options.password,
-      [SettingEnum.authToken]: options.authToken,
-      [SettingEnum.eInvoice]: options.eInvoice ?? false,
-      [SettingEnum.invoiceDownload]: options.requestInvoiceDownload ?? false,
-      [SettingEnum.responseVersion]: options.responseVersion,
-      [SettingEnum.invoiceExternalId]: options.externalId,
+      [SettingsEnum.user]: options.user,
+      [SettingsEnum.password]: options.password,
+      [SettingsEnum.authToken]: options.authToken,
+      [SettingsEnum.eInvoice]: options.eInvoice ?? false,
+      [SettingsEnum.invoiceDownload]: options.requestInvoiceDownload ?? false,
+      [SettingsEnum.responseVersion]: options.responseVersion,
+      [SettingsEnum.invoiceExternalId]: options.externalId,
     });
 }
