@@ -1,13 +1,11 @@
-import { SzamlazzAgentClient } from './lib/client';
+import { SzamlazzAgentClient } from './client';
 
-export * from './lib/constants';
+export * from './constants';
 
-export * from './lib/enums';
+export * from './enums';
 
-export * from './lib/interfaces';
+export * from './interfaces';
 
-export * from './lib/modules';
-
-export { SzamlazzAgentClient };
+export * from './modules';
 
 export default SzamlazzAgentClient;
