@@ -1,5 +1,12 @@
 # Szamlazz.hu nodeJS client
 
+<div align="center">
+
+[![codecov](https://codecov.io/gh/Tubee01/szamlazzhu-client/branch/development/graph/badge.svg?token=RNUO9X9158)](https://codecov.io/gh/Tubee01/szamlazzhu-client)
+[![npm version](https://badge.fury.io/js/szamlazzhu-client.svg)](https://badge.fury.io/js/szamlazzhu-client)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
 ## Checklist
 
 - [x] Create invoice
