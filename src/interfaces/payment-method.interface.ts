@@ -1,8 +1,8 @@
+import { PaymentMethod } from '../enums';
+
 export interface IPaymentMethod {
-  code: PaymentMethodCode;
+  code: PaymentMethod;
   name: PaymentMethodName;
 }
-
-export type PaymentMethodCode = 'bank transfer' | 'cash' | 'credit card' | 'PayPal';
 
 export type PaymentMethodName = 'Bank' | 'Cash' | 'Card' | 'PayPal';

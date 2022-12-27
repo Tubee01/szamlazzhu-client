@@ -1,13 +1,11 @@
-import { CurrencyCode } from './currency.interface';
-import { LanguageCode } from './language.interface';
-import { PaymentMethodCode } from './payment-method.interface';
+import { PaymentMethod, Language, Currency } from '../enums';
 
 export interface IHeader {
   completionDate?: string;
   paymentDueDate?: string;
-  paymentMethod?: PaymentMethodCode;
-  currency?: CurrencyCode;
-  language?: LanguageCode;
+  paymentMethod?: PaymentMethod;
+  currency?: Currency;
+  language?: Language;
   comment?: string;
   exchange?: string;
   exchangeBank?: string;

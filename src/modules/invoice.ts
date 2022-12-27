@@ -1,6 +1,6 @@
 import { Builder } from 'xml2js';
 import { Currencies } from '../constants';
-import { IHeader, IInvoice, ISeller } from '../interfaces';
+import { IInvoice, ReverseInvoiceOptions } from '../interfaces';
 import { Buyer } from './buyer';
 import { Header } from './header';
 import { Item } from './item';
@@ -26,7 +26,7 @@ export class Invoice {
     return xml;
   }
 
-  public static getReverseInvoiceXML(options: IHeader & { seller?: ISeller }): string {
+  public static getReverseInvoiceXML(options: ReverseInvoiceOptions): string {
     const { seller, invoiceNumber } = options;
     const xml = `
   ${new Header({ invoiceNumber, type: 'SS' }).getXml}

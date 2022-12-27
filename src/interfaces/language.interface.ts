@@ -1,9 +1,9 @@
+import { Language } from '../enums';
+
 export interface ILanguage {
-  code: LanguageCode;
+  code: Language;
   name: LanguageName;
 }
-
-export type LanguageCode = 'hu' | 'en' | 'de' | 'it' | 'ro' | 'sk' | 'hr' | 'fr' | 'es' | 'cz' | 'pl';
 
 export type LanguageName =
   | 'Hungarian'

@@ -1,82 +1,9 @@
+import { Currency } from '../enums';
+
 export interface ICurrency {
-  code: CurrencyCode;
-  name: CurrencyName;
+  code: Currency;
+  name: string;
   rounding: Rounding;
 }
-
-export type CurrencyCode =
-  | 'Ft'
-  | 'HUF'
-  | 'EUR'
-  | 'USD'
-  | 'GBP'
-  | 'CHF'
-  | 'CZK'
-  | 'SEK'
-  | 'NOK'
-  | 'PLN'
-  | 'RON'
-  | 'HRK'
-  | 'RUB'
-  | 'TRY'
-  | 'AUD'
-  | 'BGN'
-  | 'CAD'
-  | 'DKK'
-  | 'HKD'
-  | 'ILS'
-  | 'INR'
-  | 'JPY'
-  | 'KRW'
-  | 'MXN'
-  | 'MYR'
-  | 'NZD'
-  | 'PHP'
-  | 'SGD'
-  | 'THB'
-  | 'ZAR'
-  | 'UAH'
-  | 'AED'
-  | 'CNY'
-  | 'ISK'
-  | 'LTL'
-  | 'LVL';
-
-export type CurrencyName =
-  | 'Hungarian Forint'
-  | 'Euro'
-  | 'US Dollar'
-  | 'British Pound'
-  | 'Swiss Franc'
-  | 'Czech Koruna'
-  | 'Swedish Kron'
-  | 'Norwegian Krone'
-  | 'Polish Zloty'
-  | 'Romanian Leu'
-  | 'Croatian Kuna'
-  | 'Russian Ruble'
-  | 'Turkish Lira'
-  | 'Australian Dollar'
-  | 'Bulgarian Lev'
-  | 'Canadian Dollar'
-  | 'Danish Krone'
-  | 'Hong Kong Dollar'
-  | 'Israeli Shekel'
-  | 'Indian Rupee'
-  | 'Japanese Yen'
-  | 'South Korean Won'
-  | 'Mexican Peso'
-  | 'Malaysian Ringgit'
-  | 'New Zealand Dollar'
-  | 'Philippine Peso'
-  | 'Singapore Dollar'
-  | 'Thai Baht'
-  | 'South African Rand'
-  | 'Ukrainian Hryvnia'
-  | 'Emirati Dirham'
-  | 'Chinese Yuan Renminbi'
-  | 'Icelandic Krona'
-  | 'Lithuanian Litas'
-  | 'Latvian Lats';
 
 export type Rounding = 0 | 2;
