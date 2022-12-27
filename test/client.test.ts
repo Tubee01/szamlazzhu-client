@@ -1,4 +1,4 @@
-import SzamlazzAgentClient from "../src";
+import SzamlazzAgentClient, { Currency, Language, PaymentMethod } from "../src";
 
 describe('SzamlazzAgentClient', () => {
   const { token } = process.env as NodeJS.ProcessEnv;
@@ -38,9 +38,9 @@ describe('SzamlazzAgentClient', () => {
       header: {
         completionDate: '2020-01-01',
         paymentDueDate: '2020-01-01',
-        currency: 'HUF',
-        language: 'ro',
-        paymentMethod: 'PayPal',
+        currency: Currency.HUF,
+        language: Language.RO,
+        paymentMethod: PaymentMethod.PayPal,
         paid: true,
       },
       items: [
@@ -73,9 +73,9 @@ describe('SzamlazzAgentClient', () => {
       header: {
         completionDate: '2020-01-01',
         paymentDueDate: '2020-01-01',
-        currency: 'HUF',
-        language: 'ro',
-        paymentMethod: 'PayPal',
+        currency: Currency.HUF,
+        language: Language.RO,
+        paymentMethod: PaymentMethod.PayPal,
         paid: true,
       },
       items: [
@@ -119,9 +119,9 @@ describe('SzamlazzAgentClient', () => {
       header: {
         completionDate: '2020-01-01',
         paymentDueDate: '2020-01-01',
-        currency: 'HUF',
-        language: 'ro',
-        paymentMethod: 'PayPal',
+        currency: Currency.HUF,
+        language: Language.RO,
+        paymentMethod: PaymentMethod.PayPal,
         paid: true,
       },
       items: [
@@ -155,9 +155,9 @@ describe('SzamlazzAgentClient', () => {
       header: {
         completionDate: '2020-01-01',
         paymentDueDate: '2020-01-01',
-        currency: 'HUF',
-        language: 'ro',
-        paymentMethod: 'PayPal',
+        currency: Currency.HUF,
+        language: Language.RO,
+        paymentMethod: PaymentMethod.PayPal,
         invoiceNumberPrefix: '',
         paid: true,
       },

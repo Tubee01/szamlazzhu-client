@@ -1,5 +1,5 @@
-import { HeaderEnum as HeadersEnum } from '../enums';
-import { CurrencyCode, IHeader, LanguageCode, PaymentMethodCode } from '../interfaces';
+import { Currency, HeaderEnum as HeadersEnum, Language, PaymentMethod } from '../enums';
+import { IHeader } from '../interfaces';
 import { Currencies, Languages, PaymentMethods } from '../constants';
 import { Builder } from 'xml2js';
 import { omitEmpty } from '../helpers';
@@ -7,9 +7,9 @@ import { omitEmpty } from '../helpers';
 export class Header implements IHeader {
   completionDate!: string;
   paymentDueDate!: string;
-  paymentMethod!: PaymentMethodCode;
-  currency!: CurrencyCode;
-  language!: LanguageCode;
+  paymentMethod!: PaymentMethod;
+  currency!: Currency;
+  language!: Language;
   type?: string | undefined;
   constructor(options: IHeader) {
     Object.assign(this, validate(options));

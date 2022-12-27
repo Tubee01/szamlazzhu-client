@@ -36,7 +36,7 @@ npm install szamlazzhu-client
 #### Create invoice
 
 ```typescript
-import { SzamlazzAgentClient } from 'szamlazzhu-client';
+import { SzamlazzAgentClient, Currency, Language, PaymentMethod } from 'szamlazzhu-client';
 
 const client = new SzamlazzAgentClient({
   authToken: 'your-auth-token',
@@ -47,11 +47,11 @@ const client = new SzamlazzAgentClient({
 
 client.sendInvoice({
   header: {
-    currency: 'DKK',
+    currency: Currency.DKK,
     completionDate: '2022-11-30',
     paymentDueDate: '2022-12-08',
-    language: 'de',
-    paymentMethod: 'bank transfer',
+    language: Language.DE,
+    paymentMethod: PaymentMethod.Bank,
   },
   buyer: {
     name: 'John Doe',

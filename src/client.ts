@@ -1,6 +1,6 @@
 import { CookieJar } from 'tough-cookie';
 import { SettingsEnum } from './enums';
-import { IHeader, IInvoice, ISeller, ISettings } from './interfaces';
+import { IInvoice, ISettings, ReverseInvoiceOptions } from './interfaces';
 import { Invoice } from './modules';
 import { Builder, parseStringPromise } from 'xml2js';
 import FormData from 'form-data';
@@ -43,7 +43,7 @@ export class SzamlazzAgentClient {
     return response;
   }
 
-  public async reverseInvoice(options: IHeader & { seller?: ISeller }) {
+  public async reverseInvoice(options: ReverseInvoiceOptions) {
     let xml = Invoice.getReverseInvoiceXML(options);
 
     xml = `${this.setXmlHeader('xmlszamlast', 'agentst')}${this.settingsXml()}${xml}</xmlszamlast>`;
