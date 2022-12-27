@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.12](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.11...v0.1.12) (2022-12-27)
+
+
+### Bug Fixes
+
+* interfaces, enums, client functions ([#20](https://github.com/Tubee01/szamlazzhu-client/issues/20)) ([d7b814e](https://github.com/Tubee01/szamlazzhu-client/commit/d7b814e9fc05e0e886b25d4bf6428e14bfb43ce6))
+
 ## [0.1.11](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.10...v0.1.11) (2022-12-19)
 
 
