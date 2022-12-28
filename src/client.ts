@@ -120,8 +120,8 @@ export class SzamlazzAgentClient {
 
     if (this.options?.requestInvoiceDownload) {
       if (this.options.responseVersion === 1) {
-        const pdf = await response.text();
-        result.pdf = Buffer.from(pdf, 'base64');
+        const pdf = await response.arrayBuffer();
+        result.pdf = Buffer.from(pdf);
       } else if (this.options.responseVersion === 2) {
         const xml = await response.text();
         const json = await parseStringPromise(xml);

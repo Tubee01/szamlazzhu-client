@@ -60,6 +60,40 @@ describe('SzamlazzAgentClient', () => {
 
     await expect(resp).toHaveProperty('pdf', expect.any(Buffer));
   });
+  it('should receive an invoice with pdf, version:2', async () => {
+    const client = new SzamlazzAgentClient({ authToken: token, requestInvoiceDownload: true, responseVersion: 2 });
+    const resp = await client.sendInvoice({
+      buyer: {
+        name: 'name',
+        zip: 'zip',
+        city: 'city',
+        address: 'address',
+      },
+      header: {
+        completionDate: '2020-01-01',
+        paymentDueDate: '2020-01-01',
+        currency: Currency.HUF,
+        language: Language.RO,
+        paymentMethod: PaymentMethod.PayPal,
+        paid: true,
+      },
+      items: [
+        {
+          name: 'name',
+          quantity: 1222,
+          unit: 'db',
+          netUnitPrice: 13123123,
+          vatRate: 27,
+        },
+      ],
+      seller: {
+        bank: 'OTP',
+        accountNumber: '12345678-12345678-12345678',
+      },
+    })
+
+    await expect(resp).toHaveProperty('pdf', expect.any(Buffer));
+  });
 
   it('should receive an invoice without pdf', async () => {
     const client = new SzamlazzAgentClient({ authToken: token });
