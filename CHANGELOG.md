@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/Tubee01/szamlazzhu-client/compare/v0.2.0...v0.2.1) (2023-01-02)
+
+
+### Features
+
+* change paymentmethod enum to hungarian ([0322f24](https://github.com/Tubee01/szamlazzhu-client/commit/0322f24fecce2714f32cbf2763ffe0eec981002c))
+
 ## [0.2.0](https://github.com/Tubee01/szamlazzhu-client/compare/v0.1.12...v0.2.0) (2022-12-28)
 
 
