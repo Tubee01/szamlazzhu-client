@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/Tubee01/szamlazzhu-client/compare/v0.2.2...v0.2.3) (2023-01-02)
+
+
+### Bug Fixes
+
+* remove unneeded interface ([cd75371](https://github.com/Tubee01/szamlazzhu-client/commit/cd7537114d1725aa057fd79a095da1c60acac179))
+
 ## [0.2.2](https://github.com/Tubee01/szamlazzhu-client/compare/v0.2.1...v0.2.2) (2023-01-02)
 
 
