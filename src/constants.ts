@@ -1,5 +1,5 @@
-import { Currency, Language, PaymentMethod } from './enums';
-import { ICurrency, ILanguage, IPaymentMethod, ITaxSubject } from './interfaces';
+import { Currency, Language } from './enums';
+import { ICurrency, ILanguage, ITaxSubject } from './interfaces';
 
 export const Languages: ILanguage[] = [
   { code: Language.HU, name: 'Hungarian' },
@@ -21,13 +21,6 @@ export const TaxSubjects: ITaxSubject[] = [
   { code: 1, name: 'Has a Hungarian VAT Number' },
   { code: 0, name: 'We dont know' },
   { code: -1, name: 'Has no Hungarian VAT Number' },
-];
-
-export const PaymentMethods: IPaymentMethod[] = [
-  { code: PaymentMethod.Bank, name: 'Bank' },
-  { code: PaymentMethod.Cash, name: 'Cash' },
-  { code: PaymentMethod.Card, name: 'Card' },
-  { code: PaymentMethod.PayPal, name: 'PayPal' },
 ];
 
 export const Currencies: ICurrency[] = [

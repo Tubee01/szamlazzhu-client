@@ -1,6 +1,6 @@
 import { Currency, HeaderEnum as HeadersEnum, Language, PaymentMethod } from '../enums';
 import { IHeader } from '../interfaces';
-import { Currencies, Languages, PaymentMethods } from '../constants';
+import { Currencies, Languages } from '../constants';
 import { Builder } from 'xml2js';
 import { omitEmpty } from '../helpers';
 
@@ -39,14 +39,6 @@ const validate = (options: IHeader) => {
 
   if (!options.paymentMethod) {
     throw new Error('SzamlazzAgentClient requires header paymentMethod');
-  }
-
-  if (PaymentMethods.find((paymentMethod) => paymentMethod.code === options.paymentMethod) === undefined) {
-    throw new Error(
-      `SzamlazzAgentClient requires header paymentMethod to be one of ${PaymentMethods.map(
-        (paymentMethod) => paymentMethod.code,
-      ).join(', ')}`,
-    );
   }
 
   if (!options.currency) {

@@ -1,5 +1,5 @@
 import { Builder } from 'xml2js';
-import { Currencies, Languages, PaymentMethods, Header, HeaderEnum, PaymentMethod } from '../src';
+import { Currencies, Languages,  Header, HeaderEnum, PaymentMethod } from '../src';
 
 describe('Header', () => {
   const builder = new Builder({ rootName: 'fejlec', headless: true });
@@ -18,21 +18,6 @@ describe('Header', () => {
     expect(
       () => new Header({ completionDate: '2020-01-01', paymentDueDate: '2020-01-01' }),
     ).toThrow('SzamlazzAgentClient requires header paymentMethod');
-  });
-
-  it('should throw an error if header paymentMethod is not valid', () => {
-    expect(
-      () =>
-        new Header({
-          completionDate: '2020-01-01',
-          paymentDueDate: '2020-01-01',
-          paymentMethod: 'test',
-        }),
-    ).toThrow(
-      `SzamlazzAgentClient requires header paymentMethod to be one of ${PaymentMethods.map(
-        (paymentMethod) => paymentMethod.code,
-      ).join(', ')}`,
-    );
   });
 
   it('should throw an error if header currency is not provided', () => {
