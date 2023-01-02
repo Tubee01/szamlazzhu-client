@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+build
+coverage
+test
+package-lock.json
+tsconfig.json
+.cache/

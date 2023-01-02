@@ -1,0 +1,59 @@
+name: CI
+
+on: [push]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Node.JS version from package.json
+        id: get-versions
+        run: echo "node=$(jq -r .engines.node ./package.json)" >> $GITHUB_OUTPUT
+
+      - name: Use Node.js ${{ steps.get-versions.outputs.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ steps.get-versions.outputs.node }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test -- --coverage
+        env:
+          token: ${{ secrets.AGENT_TOKEN }}
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+  release:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/development'
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Release
+        uses: google-github-actions/release-please-action@v3.7.1
+        with:
+          release-type: node
+          default-branch: ${{ steps.current_branch.outputs.branch }}
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true

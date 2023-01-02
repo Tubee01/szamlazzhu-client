@@ -1,0 +1,16 @@
+export enum BuyerEnum {
+  name = 'nev',
+  zip = 'irsz',
+  city = 'telepules',
+  address = 'cim',
+  email = 'email',
+  sendEmail = 'sendEmail',
+  taxNumber = 'adoszam',
+  postName = 'postazasiNev',
+  postZip = 'postazasiIrsz',
+  postCity = 'postazasiTelepules',
+  postAddress = 'postazasiCim',
+  identifier = 'azonosito',
+  phone = 'telefonszam',
+  comment = 'megjegyzes',
+}
