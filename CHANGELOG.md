@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/Tubee01/szamlazzhu-client/compare/v0.2.1...v0.2.2) (2023-01-02)
+
+
+### Features
+
+* remove paymentmethods and check ([b12218c](https://github.com/Tubee01/szamlazzhu-client/commit/b12218c4d6e160b5b792c5694a5d0bf9d52658b7))
+
 ## [0.2.1](https://github.com/Tubee01/szamlazzhu-client/compare/v0.2.0...v0.2.1) (2023-01-02)
 
 
