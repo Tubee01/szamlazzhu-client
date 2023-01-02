@@ -1,5 +1,5 @@
 import { Builder } from 'xml2js';
-import { Currencies, Languages, PaymentMethods, Header, HeaderEnum } from '../src';
+import { Currencies, Languages, PaymentMethods, Header, HeaderEnum, PaymentMethod } from '../src';
 
 describe('Header', () => {
   const builder = new Builder({ rootName: 'fejlec', headless: true });
@@ -41,7 +41,7 @@ describe('Header', () => {
         new Header({
           completionDate: '2020-01-01',
           paymentDueDate: '2020-01-01',
-          paymentMethod: 'cash',
+          paymentMethod: PaymentMethod.Cash,
         }),
     ).toThrow('SzamlazzAgentClient requires header currency');
   });
@@ -52,7 +52,7 @@ describe('Header', () => {
         new Header({
           completionDate: '2020-01-01',
           paymentDueDate: '2020-01-01',
-          paymentMethod: 'cash',
+          paymentMethod: PaymentMethod.Cash,
           currency: 'test',
         }),
     ).toThrow(
@@ -68,7 +68,7 @@ describe('Header', () => {
         new Header({
           completionDate: '2020-01-01',
           paymentDueDate: '2020-01-01',
-          paymentMethod: 'cash',
+          paymentMethod: PaymentMethod.Cash,
           currency: 'HUF',
         }),
     ).toThrow('SzamlazzAgentClient requires header language');
@@ -80,7 +80,7 @@ describe('Header', () => {
         new Header({
           completionDate: '2020-01-01',
           paymentDueDate: '2020-01-01',
-          paymentMethod: 'cash',
+          paymentMethod: PaymentMethod.Cash,
           currency: 'HUF',
           language: 'test',
         }),
@@ -97,7 +97,7 @@ describe('Header', () => {
         new Header({
           completionDate: 'test',
           paymentDueDate: '2020-01-01',
-          paymentMethod: 'cash',
+          paymentMethod: PaymentMethod.Cash,
           currency: 'HUF',
           language: 'hu',
         }),
@@ -110,7 +110,7 @@ describe('Header', () => {
         new Header({
           completionDate: '2020-01-01',
           paymentDueDate: 'test',
-          paymentMethod: 'cash',
+          paymentMethod: PaymentMethod.Cash,
           currency: 'HUF',
           language: 'hu',
         }),
@@ -121,7 +121,7 @@ describe('Header', () => {
     const headerClass = new Header({
       completionDate: '2020-01-01',
       paymentDueDate: '2020-01-01',
-      paymentMethod: 'cash',
+      paymentMethod: PaymentMethod.Cash,
       currency: 'HUF',
       language: 'hu',
     });
@@ -129,7 +129,7 @@ describe('Header', () => {
     expect(headerClass).toEqual({
       completionDate: '2020-01-01',
       paymentDueDate: '2020-01-01',
-      paymentMethod: 'cash',
+      paymentMethod: PaymentMethod.Cash,
       currency: 'HUF',
       language: 'hu',
       exchangeBank: 'MNB',
@@ -141,7 +141,7 @@ describe('Header', () => {
     const header = new Header({
       completionDate: '2020-01-01',
       paymentDueDate: '2020-01-01',
-      paymentMethod: 'cash',
+      paymentMethod: PaymentMethod.Cash,
       currency: 'HUF',
       language: 'hu',
     });
@@ -150,7 +150,7 @@ describe('Header', () => {
       [HeaderEnum.issueDate]: new Date().toISOString().split('T')[0],
       [HeaderEnum.completionDate]: '2020-01-01',
       [HeaderEnum.paymentDueDate]: '2020-01-01',
-      [HeaderEnum.paymentMethod]: 'cash',
+      [HeaderEnum.paymentMethod]: PaymentMethod.Cash,
       [HeaderEnum.currency]: 'HUF',
       [HeaderEnum.language]: 'hu',
       [HeaderEnum.exchangeBank]: 'MNB',
@@ -162,7 +162,7 @@ describe('Header', () => {
     const obj = {
       completionDate: '2020-01-01',
       paymentDueDate: '2020-01-01',
-      paymentMethod: 'cash',
+      paymentMethod: PaymentMethod.Cash,
       currency: 'HUF',
       language: 'hu',
     }
@@ -203,7 +203,7 @@ describe('Header', () => {
     expect(() => new Header({
       completionDate: 'test-01-01',
       paymentDueDate: '2020-test-01',
-      paymentMethod: 'cash',
+      paymentMethod: PaymentMethod.Cash,
       currency: 'HUF',
       language: 'hu',
     })).toThrow('SzamlazzAgentClient requires dates to be a valid date');

@@ -1,6 +1,6 @@
 export enum PaymentMethod {
-  Bank = 'bank transfer',
-  Cash = 'cash',
-  Card = 'credit card',
+  Bank = 'Átutalás',
+  Cash = 'Készpénz',
+  Card = 'Bankkártya',
   PayPal = 'PayPal',
 }
